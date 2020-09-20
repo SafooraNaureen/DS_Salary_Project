@@ -6,7 +6,7 @@
 
 - Engineered features from the text of each job description to quantify the value companies put on python, R,	excel,	sql,	spark,	tableau,	aws and	hadoop
 
-- Optimized Linear, Ridge, Lasso, Support Vector and Random Forest Regressors using GridsearchCV to reach the best model.
+- Used Linear, Ridge, Lasso, Support Vector and Random Forest Regressors to reach the best model.
 
 - Built a client facing API using flask
 
