@@ -29,7 +29,7 @@ Flask Productionization: https://towardsdatascience.com/productionize-a-machine-
 
 ## Web Scraping
 
-Tweaked the web scraper github repo (above) to scrape 700 job postings from glassdoor.com. With each job, we got the following:
+Tweaked the web scraper github repo (above) to scrape 700 job postings from glassdoor.com. With each job, got the following:
 
 - Job title
 - Salary Estimate
@@ -48,7 +48,7 @@ Tweaked the web scraper github repo (above) to scrape 700 job postings from glas
 
 ## Data Cleaning
 
-After scraping the data, I needed to clean it up so that it was usable for our model. I made the following changes and created the following variables:
+After scraping the data, cleaned it  up so that it was usable for model building. Made the following changes and created the following variables:
 
 - Parsed numeric data out of salary
 
@@ -60,7 +60,7 @@ After scraping the data, I needed to clean it up so that it was usable for our m
 
 - Transformed founded date into age of company
 
-- Made columns for if different skills were listed in the job description:
+- Made columns for different skills which were listed in the job description:
 
    - python
    - R
@@ -76,7 +76,7 @@ After scraping the data, I needed to clean it up so that it was usable for our m
 - Column for description length
 
 ## EDA
-I looked at the distributions of the data and the value counts for the various categorical variables. Below are a few highlights from the pivot tables.
+Looked at the distributions of the data and the value counts for the various categorical variables. Below are a few highlights from the pivot tables.
 
 ![](/images/wordcloud%20of%20job%20description.png)
 
@@ -85,21 +85,19 @@ I looked at the distributions of the data and the value counts for the various c
 ![](/images/correlation.png)
 
 ## Model Building
-First, I transformed the categorical variables into dummy variables. I also split the data into train and tests sets with a test size of 10%.
+First, transformed the categorical variables into dummy variables. Also split the data into train and tests sets with a test size of 10%.
 
-I tried five different models and evaluated them using Mean Absolute Error. I chose MAE because it is relatively easy to interpret and outliers aren’t particularly bad in for this type of model.
-
-I tried five different models:
+Tried five different models and evaluated them using Mean Absolute Error. Chose MAE because it is relatively easy to interpret and also as the outliers aren’t particularly bad in for this type of model.
 
 Multiple Linear Regression – Baseline for the model
 
 Ridge regression
 
-Lasso Regression – Because of the sparse data from the many categorical variables, I thought a normalized regression like lasso would be effective.
+Lasso Regression – Because of the sparse data from the many categorical variables, thought a normalized regression like lasso would be effective.
 
 Support vector regression- Which did not give good values comaparitively
 
-Random Forest – Again, with the sparsity associated with the data, I thought that this would be a good fit.
+Random Forest – Again, with the sparsity associated with the data, thought that this would be a good fit.
 
 ## Model Performance
 
@@ -111,20 +109,4 @@ The Random Forest model outperformed the other approaches on the test and valida
 
 ## Productionization
 
-In this step, I built a flask API endpoint that was hosted on a local webserver by following along with the TDS tutorial in the reference section above. The API endpoint takes in a request with a list of values from a job listing and returns an estimated salary.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+In this step, built a flask API endpoint that was hosted on a local webserver by following along with the TDS tutorial in the reference section above. The API endpoint takes in a request with a list of values from a job listing and returns an estimated salary.
