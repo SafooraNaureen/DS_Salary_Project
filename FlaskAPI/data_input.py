@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Apr 14 08:27:28 2020
-@author: Ken
+Created on Sun Sep 14 18:27:28 2020
+@author: Safoora Naureen 
 """
 
 data_in = [3.6,
